@@ -3,16 +3,23 @@ document.addEventListener('DOMContentLoaded', () =>{
     const result = document.querySelector('#winner')
     const displayCurrentPlayer = document.querySelector('#current-player')
     let currentPlayer = 1
-    
-    for (var i = 0, len= squares.length; i < len; i++ )
+
+    for (var i = 0, len = squares.length;i<len;i++)
     (function(index){
         squares[i].onclick = function(){
-            if(squares[index + 7].classList.contains('taken')){
-                if(currentPlayer == 1){
+            if(squares[index+7].classList.contains('taken') && !(squares[index].classList.contains('taken'))){
+                if(currentPlayer === 1){
                     squares[index].classList.add('taken')
                     squares[index].classList.add('player-one')
-                }
-            }
+                    currentPlayer = 2
+                    displayCurrentPlayer.innerHTML = currentPlayer
+                } else if(currentPlayer === 2) {
+                    squares[index].classList.add('taken')
+                    squares[index].classList.add('player-two')
+                    currentPlayer = 1
+                    displayCurrentPlayer.innerHTML = currentPlayer
+                } 
+            }else alert('nope')
         }
-    })
+    })(i)
 })
