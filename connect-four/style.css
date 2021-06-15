@@ -1,0 +1,25 @@
+.grid{
+    border: 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    height: 132px;
+    width: 154px;
+}
+.grid div{
+    height: 20px;
+    width: 20px;
+    border:1px solid;
+}
+
+.grid div.taken{
+    border:none;
+}
+
+.player-one{
+    color:red;
+    border-radius: 10px;
+}
+.player-two{
+    color:blue;
+    border-radius: 10px;
+}
